@@ -114,3 +114,9 @@ i {
   text-align: center;
   text-transform: uppercase;
 }
+.disclaimer {
+  margin-top: 10px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 900;
+  text-align: center;
+}
