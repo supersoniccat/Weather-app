@@ -95,7 +95,7 @@ function changeToFar(event) {
   var celsius = 18;
   var fahrenheit = Math.round((celsius * 9) / 5 + 32);
   let FarTemp = document.querySelector("#current-temp");
-  FarTemp.innerHTML = `${fahrenheit}º`;
+  FarTemp.innerHTML = `${fahrenheit}`;
 }
 
 let TFar = document.querySelector("#far");
@@ -105,7 +105,7 @@ function changeToCelcius(event) {
   event.preventDefault();
   var celsius = 18;
   let CelsiusTemp = document.querySelector("#current-temp");
-  CelsiusTemp.innerHTML = `${celsius}º`;
+  CelsiusTemp.innerHTML = `${celsius}`;
 }
 
 let TCel = document.querySelector("#celsius");
