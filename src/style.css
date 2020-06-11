@@ -1,0 +1,116 @@
+body {
+  font-family: sans-serif;
+  font-size: 15px;
+  color: #7575a1;
+}
+.app-body {
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 500px;
+  padding: 20px 10px;
+  border-radius: 15px;
+  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 50%);
+}
+.search-button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+i {
+  color: #e9967a;
+  height: 20px;
+}
+
+.local-button {
+  width: 100px;
+  background-color: #e9967a;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.weather-unit {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.date {
+  text-align: justify;
+  font-size: x-small;
+  margin-left: 45px;
+  padding: 5px;
+}
+
+.local-city {
+  margin-top: 85px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 65px;
+  font-weight: 900;
+  text-align: left;
+  color: #3f3d56;
+}
+
+.girl-img {
+  display: flex;
+  align-content: flex-end;
+  margin-top: 35px;
+  margin-left: 45px;
+  max-width: 90%;
+}
+.weather-ic {
+  max-width: 65%;
+  margin-right: 0;
+}
+.current-temp {
+  text-align: right;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 100px;
+  color: #e9967a;
+}
+.max-min {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: right;
+  margin-right: 40px;
+}
+.forecast {
+  font-family: "Open Sans Condensed", sans-serif;
+  color: #3f3d56;
+  padding: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: left;
+}
+
+.next-days {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f3fcf2af;
+  max-width: 490px;
+}
+.weekforecast {
+  border-radius: 5px;
+  background-color: rgba(63, 61, 86, 0.2);
+  max-width: 85%;
+  margin: 5px;
+  font-family: "Open Sans Condensed", sans-serif;
+  color: #e68463;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+}
