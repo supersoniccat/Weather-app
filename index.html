@@ -28,17 +28,17 @@
 
   <body>
     <div class="container">
-      <div class="app-body">
+      <div class="weather-app-wrapper">
         <div class="row">
           <div class="col-3">
-            <button class="weather-unit" id="celsius">
+            <button class="weather-unit" id="celsius-btn">
               <img
                 src="images\iconfinder_weather_21_2682830.png"
                 alt="celcius"
                 width="20px"
               />
             </button>
-            <button class="weather-unit" id="far">
+            <button class="weather-unit" id="far-btn">
               <img
                 src="images\iconfinder_weather_22_2682829.png"
                 alt="far"
@@ -48,8 +48,12 @@
           </div>
           <div class="col-6">
             <div class="form-row justify-content-center">
-              <form id="search-bar">
-                <input id="city-input" type="text" placeholder="Search City" />
+              <form id="search-city-bar">
+                <input
+                  id="city-search-input"
+                  type="text"
+                  placeholder="Search City"
+                />
                 <button type="submit" class="search-button">
                   <i class="fas fa-search"></i>
                 </button>
@@ -57,7 +61,7 @@
             </div>
           </div>
           <div class="form-row justify-content-right">
-            <button class="local-button" id="local-temp">
+            <button class="local-city-button" id="local-temperature">
               current
             </button>
           </div>
@@ -76,31 +80,38 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-6">
-            <h2 class="current-temp"><span id="current-temp"></span>º</h2>
-            <h3 class="max-min">
-              <span id="MaxTemp"></span>º | <span id="MinTemp"></span>º
-            </h3>
+          <div class="col-4">
+            <div class="details-weather">
+                <ul class="details-weather">
+                  <li>Humidity: <span id="humidity"> 30 </span>%</p></li>
+                  <li>Wind: <span id="wind"> 1000 </span> km/h</p></li>
+                </ul>
+            </div>
           </div>
-          <div class="col-6">
+          <div class="col-3 weather-icon-api">
+            <h2 class="current-temp"><span id="current-temp"></span>º</h2>
+          </div>
+          <div class="col-5 details">
             <img
-              src="images\iconfinder_weather_3_2682848.png"
+              src=""
               alt="weather icon"
-              class="weather-ic"
+              class="weather-icon"
+              id="weather-icon"
             />
+            <p class="weather-text weather-description" id="description"></p>
           </div>
         </div>
         <div class="row">
           <div class="w-100"></div>
           <div class="col more-info">
-            <span class="forecast"> next days </span>
+            <span class="forecast"> hourly forecast </span>
           </div>
           <div class="w-100"></div>
         </div>
-        <div class="next-days">
+        <div class="next-hours">
           <div class="row justify-content-center">
             <div class="col-2 weekforecast">
-              mon
+              03:00
               <br />
               <img
                 src="images\iconfinder_weather_2_2682849.png"
@@ -112,7 +123,7 @@
               </p>
             </div>
             <div class="col-2 weekforecast">
-              tue
+              06:00
               <br />
               <img
                 src="images\iconfinder_weather_3_2682848.png"
@@ -122,7 +133,7 @@
               <p>23º | 14º</p>
             </div>
             <div class="col-2 weekforecast">
-              wed
+              12:00
               <br />
               <img
                 src="images\iconfinder_weather_2_2682849.png"
@@ -132,7 +143,7 @@
               <p>24º | 14º</p>
             </div>
             <div class="col-2 weekforecast">
-              thu
+              15:00
               <br />
               <img
                 src="images\iconfinder_weather_2_2682849.png"
@@ -142,7 +153,7 @@
               <p>22º | 13º</p>
             </div>
             <div class="col-2 weekforecast">
-              fri
+              18:00
               <br />
               <img
                 src="images\iconfinder_weather_2_2682849.png"

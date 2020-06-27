@@ -38,17 +38,21 @@ currentdate.innerHTML = `<strong>${weekday}, ${hour}:${min}</strong><br/> ${date
 //set city & temperature
 
 function showcityWeather(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#current-temp").innerHTML = Math.round(
-    response.data.main.temp
+  let cityElement = document.querySelector("#city");
+  let temperatureElement = document.querySelector("#current-temp");
+  let iconElement = document.querySelector("#weather-icon");
+  let descriptionElement = document.querySelector("#description");
+
+  cityElement.innerHTML = response.data.name;
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  document.querySelector("#MaxTemp").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
-  document.querySelector("#MinTemp").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 function search(city) {
   let apiKey = "630a779b896cbbb265d0e5f66fda7b06";
   let citySearchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -56,11 +60,11 @@ function search(city) {
 }
 function findCity(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
+  let city = document.querySelector("#city-search-input").value;
   search(city);
 }
 
-let form = document.querySelector("#search-bar");
+let form = document.querySelector("#search-city-bar");
 form.addEventListener("submit", findCity);
 
 search("Aveiro");
@@ -85,7 +89,7 @@ function setCurrentLocal() {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 
-let button = document.querySelector("#local-temp");
+let button = document.querySelector("#local-temperature");
 button.addEventListener("click", setCurrentLocal);
 
 //change temperature units
@@ -98,7 +102,7 @@ function changeToFar(event) {
   FarTemp.innerHTML = `${fahrenheit}`;
 }
 
-let TFar = document.querySelector("#far");
+let TFar = document.querySelector("#far-btn");
 TFar.addEventListener("click", changeToFar);
 
 function changeToCelcius(event) {
@@ -108,5 +112,5 @@ function changeToCelcius(event) {
   CelsiusTemp.innerHTML = `${celsius}`;
 }
 
-let TCel = document.querySelector("#celsius");
+let TCel = document.querySelector("#celsius-btn");
 TCel.addEventListener("click", changeToCelcius);

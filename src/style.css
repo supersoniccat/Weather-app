@@ -3,14 +3,14 @@ body {
   font-size: 15px;
   color: #7575a1;
 }
-.app-body {
+.weather-app-wrapper {
   display: block;
   margin: 0 auto;
   margin-top: 50px;
   max-width: 500px;
   padding: 20px 10px;
   border-radius: 15px;
-  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 50%);
+  background-image: linear-gradient(to top, #badefa 12%, #d1e0e6fd 50%);
 }
 .search-button {
   background-color: Transparent;
@@ -24,7 +24,7 @@ i {
   height: 20px;
 }
 
-.local-button {
+.local-city-button {
   width: 100px;
   background-color: #e9967a;
   border: none;
@@ -43,7 +43,6 @@ i {
   cursor: pointer;
   margin-left: 5px;
 }
-
 .date {
   text-align: justify;
   font-size: x-small;
@@ -59,18 +58,36 @@ i {
   text-align: left;
   color: #3f3d56;
 }
-
 .girl-img {
-  display: flex;
   align-content: flex-end;
   margin-top: 35px;
   margin-left: 45px;
   max-width: 90%;
 }
-.weather-ic {
-  max-width: 65%;
-  margin-right: 0;
+
+.weather-icon {
+  margin-top: -20px;
+  margin-left: 10px;
 }
+.weather-description {
+  margin-left: 20px;
+  margin-top: -10px;
+}
+.details-weather {
+  list-style: none;
+  line-height: 40%;
+  margin-top: 50px;
+  text-align: left;
+}
+.weather-text:first-letter {
+  text-transform: uppercase;
+}
+.weather-text,
+.details-weather {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 12px;
+}
+
 .current-temp {
   text-align: right;
   font-family: "Open Sans Condensed", sans-serif;
