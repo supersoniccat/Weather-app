@@ -1,23 +1,12 @@
 //Set current Time & date
 
-let now = new Date();
+let date = new Date();
 let currentdate = document.querySelector("#current-date");
+let currenttime = document.querySelector("#current-hours");
 
-let date = now.getDate();
-let year = now.getFullYear();
-let hour = now.getHours();
-let min = now.getMinutes();
-let week = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let weekday = week[now.getDay()];
-
+let day = date.getDate();
+let week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let weekday = week[date.getDay()];
 let months = [
   "January",
   "February",
@@ -32,8 +21,18 @@ let months = [
   "November",
   "December",
 ];
-let month = months[now.getMonth()];
-currentdate.innerHTML = `<strong>${weekday}, ${hour}:${min}</strong><br/> ${date} of  ${month} ${year} `;
+let month = months[date.getMonth()];
+
+let hours = date.getHours();
+if (hours < 10) {
+  hours = `0${hour}`;
+}
+let minutes = date.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+currentdate.innerHTML = `${weekday}, ${month} ${day}`;
+currenttime.innerHTML = `${hours}:${minutes}`;
 
 //set city & temperature
 

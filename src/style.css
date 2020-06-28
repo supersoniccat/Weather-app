@@ -3,6 +3,7 @@ body {
   font-size: 15px;
   color: #7575a1;
 }
+
 .weather-app-wrapper {
   display: block;
   margin: 0 auto;
@@ -12,6 +13,7 @@ body {
   border-radius: 15px;
   background-image: linear-gradient(to top, #badefa 12%, #d1e0e6fd 50%);
 }
+
 .search-button {
   background-color: Transparent;
   background-repeat: no-repeat;
@@ -19,6 +21,7 @@ body {
   cursor: pointer;
   overflow: hidden;
 }
+
 i {
   color: #e9967a;
   height: 20px;
@@ -43,11 +46,28 @@ i {
   cursor: pointer;
   margin-left: 5px;
 }
-.date {
-  text-align: justify;
-  font-size: x-small;
+
+.weather-app-icon {
+  align-content: flex-end;
+  margin-top: 35px;
   margin-left: 45px;
-  padding: 5px;
+  max-width: 100%;
+}
+
+.date,
+.hours {
+  text-align: justify;
+  font-family: "Open Sans Condensed", sans-serif;
+  margin-left: 35px;
+}
+.date {
+  font-size: 15px;
+  font-weight: 900;
+  margin-top: 0%;
+}
+.hours {
+  font-size: 25px;
+  margin-top: -15%;
 }
 
 .local-city {
@@ -58,19 +78,14 @@ i {
   text-align: left;
   color: #3f3d56;
 }
-.girl-img {
-  align-content: flex-end;
-  margin-top: 35px;
-  margin-left: 45px;
-  max-width: 90%;
-}
 
 .weather-icon {
   margin-top: -20px;
   margin-left: 10px;
 }
+
 .weather-description {
-  margin-left: 20px;
+  margin-left: 25px;
   margin-top: -10px;
 }
 .details-weather {
@@ -79,21 +94,24 @@ i {
   margin-top: 50px;
   text-align: left;
 }
-.weather-text:first-letter {
-  text-transform: uppercase;
-}
+
 .weather-text,
 .details-weather {
   font-family: "Open Sans Condensed", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
 }
 
-.current-temp {
+.weather-text:first-letter {
+  text-transform: uppercase;
+}
+
+.current-temperature {
   text-align: right;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 100px;
   color: #e9967a;
 }
+
 .max-min {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 20px;
@@ -120,13 +138,13 @@ i {
   background-color: #f3fcf2af;
   max-width: 490px;
 }
-.weekforecast {
+.hourforecast {
   border-radius: 5px;
-  background-color: rgba(63, 61, 86, 0.2);
+  background-color: #3f3d5679;
   max-width: 85%;
   margin: 5px;
   font-family: "Open Sans Condensed", sans-serif;
-  color: #e68463;
+  color: #e6e6e6;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
