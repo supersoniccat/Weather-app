@@ -1,6 +1,6 @@
-body {
-  font-family: sans-serif;
-  font-size: 15px;
+.container {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 16px;
   color: #7575a1;
 }
 
@@ -13,7 +13,13 @@ body {
   border-radius: 15px;
   background-image: linear-gradient(to top, #badefa 12%, #d1e0e6fd 50%);
 }
-
+.weather-unit {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 5px;
+}
 .search-button {
   background-color: Transparent;
   background-repeat: no-repeat;
@@ -21,30 +27,19 @@ body {
   cursor: pointer;
   overflow: hidden;
 }
-
 i {
   color: #e9967a;
   height: 20px;
 }
-
 .local-city-button {
   width: 100px;
   background-color: #e9967a;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  font-family: "Open Sans Condensed", sans-serif;
   font-size: 20px;
   font-weight: 900;
   color: #fff;
-}
-
-.weather-unit {
-  background-color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-left: 5px;
 }
 
 .weather-app-icon {
@@ -53,11 +48,9 @@ i {
   margin-left: 45px;
   max-width: 100%;
 }
-
 .date,
 .hours {
   text-align: justify;
-  font-family: "Open Sans Condensed", sans-serif;
   margin-left: 35px;
 }
 .date {
@@ -74,7 +67,6 @@ i {
 .local-city {
   margin-top: 85px;
   margin-left: 2%;
-  font-family: "Open Sans Condensed", sans-serif;
   font-size: 65px;
   font-weight: 900;
   text-align: left;
@@ -97,19 +89,12 @@ i {
   text-align: left;
 }
 
-.weather-text,
-.details-weather {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 14px;
-}
-
 .weather-text:first-letter {
   text-transform: uppercase;
 }
 
 .current-temperature {
   margin-top: 0%;
-  font-family: "Open Sans Condensed", sans-serif;
   font-size: 100px;
   text-align: right;
   color: #e9967a;
@@ -120,30 +105,19 @@ i {
   color: #222172f6;
 }
 .forecast {
-  font-family: "Open Sans Condensed", sans-serif;
   color: #3f3d56;
   padding: 20px;
-  font-size: 20px;
+  font-size: 22px;
   text-transform: uppercase;
   font-weight: 900;
   text-align: left;
 }
 
-.next-days {
-  display: block;
-  margin: 0 auto;
-  margin-top: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #f3fcf2af;
-  max-width: 490px;
-}
 .hourforecast {
   border-radius: 5px;
   background-color: #3f3d5679;
   max-width: 85%;
   margin: 5px;
-  font-family: "Open Sans Condensed", sans-serif;
   color: #e6e6e6;
   font-weight: 800;
   text-align: center;
@@ -151,7 +125,6 @@ i {
 }
 .disclaimer {
   margin-top: 10px;
-  font-family: "Open Sans Condensed", sans-serif;
   font-weight: 900;
   text-align: center;
 }
