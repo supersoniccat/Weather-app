@@ -115,12 +115,9 @@ i {
   color: #e9967a;
 }
 
-.max-min {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 20px;
-  font-weight: 900;
-  text-align: right;
-  margin-right: 40px;
+.min-temp {
+  font-weight: bolder;
+  color: #222172f6;
 }
 .forecast {
   font-family: "Open Sans Condensed", sans-serif;

@@ -32,9 +32,7 @@ if (minutes < 10) {
 currentdate.innerHTML = `${weekday}, ${month} ${day}`;
 currenttime.innerHTML = `${hours}:${minutes}`;
 
-//set city & temperature
-
-function showcityWeather(response) {
+function displayWeather(response) {
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#current-temp");
   let iconElement = document.querySelector("#weather-icon");
@@ -53,11 +51,55 @@ function showcityWeather(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
 }
+function formatHours(timestamp) {
+  let time = new Date(timestamp);
+  let hour = time.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let min = time.getMinutes();
+  if (min < 10) {
+    min = `0${min}`;
+  }
+  return `${hour}:${min}`;
+}
 
+function displayForecast(response) {
+  console.log(response.data);
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+  <div class="col-2 hourforecast">
+              <div id="hour-forecast">
+                ${formatHours(forecast.dt * 1000)}
+              </div>
+              <img
+                src="http://openweathermap.org/img/wn/${
+                  forecast.weather[0].icon
+                }@2x.png"
+                width="50px;"
+                id="forecast-icon"/>
+              <div id="forecast-temp">
+                ${Math.round(
+                  forecast.main.temp_max
+                )}º | <span class="min-temp">${Math.round(
+      forecast.main.temp_min
+    )}º</span>
+              </div>
+            </div>`;
+  }
+}
 function search(city) {
   let apiKey = "630a779b896cbbb265d0e5f66fda7b06";
-  let citySearchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-  axios.get(citySearchUrl).then(showcityWeather);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayWeather);
+
+  let apiUrl2 = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl2).then(displayForecast);
 }
 function findCity(event) {
   event.preventDefault();
@@ -75,7 +117,7 @@ search("Aveiro");
 function localWeather(response) {
   let place = document.querySelector("#city");
   place.innerHTML = `${response.data.name}`;
-  showcityWeather(response);
+  displayWeather(response);
 }
 
 function getPosition(position) {
