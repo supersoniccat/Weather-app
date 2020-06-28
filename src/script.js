@@ -40,8 +40,10 @@ function displayWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
 
+  celsiusTemperature = Math.round(response.data.main.temp);
+
   cityElement.innerHTML = response.data.name;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = celsiusTemperature;
   descriptionElement.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
@@ -84,9 +86,9 @@ function displayForecast(response) {
                 width="50px;"
                 id="forecast-icon"/>
               <div id="forecast-temp">
-                ${Math.round(
+                <span class="max-temp">${Math.round(
                   forecast.main.temp_max
-                )}º | <span class="min-temp">${Math.round(
+                )}</span>º | <span class="min-temp">${Math.round(
       forecast.main.temp_min
     )}º</span>
               </div>
@@ -112,8 +114,6 @@ form.addEventListener("submit", findCity);
 
 search("Aveiro");
 
-// get local temperature
-
 function localWeather(response) {
   let place = document.querySelector("#city");
   place.innerHTML = `${response.data.name}`;
@@ -135,25 +135,21 @@ function setCurrentLocal() {
 let button = document.querySelector("#local-temperature");
 button.addEventListener("click", setCurrentLocal);
 
-//change temperature units
-
-function changeToFar(event) {
+function changeToFahrenheit(event) {
   event.preventDefault();
-  var celsius = 18;
-  var fahrenheit = Math.round((celsius * 9) / 5 + 32);
-  let FarTemp = document.querySelector("#current-temp");
-  FarTemp.innerHTML = `${fahrenheit}`;
+  let temperatureElement = document.querySelector("#current-temp");
+  let fahrTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrTemperature);
 }
 
-let TFar = document.querySelector("#far-btn");
-TFar.addEventListener("click", changeToFar);
+let fahrenheitLink = document.querySelector("#far-btn");
+fahrenheitLink.addEventListener("click", changeToFahrenheit);
 
 function changeToCelcius(event) {
   event.preventDefault();
-  var celsius = 18;
-  let CelsiusTemp = document.querySelector("#current-temp");
-  CelsiusTemp.innerHTML = `${celsius}`;
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = celsiusTemperature;
 }
 
-let TCel = document.querySelector("#celsius-btn");
-TCel.addEventListener("click", changeToCelcius);
+let celsiusLink = document.querySelector("#celsius-btn");
+celsiusLink.addEventListener("click", changeToCelcius);
