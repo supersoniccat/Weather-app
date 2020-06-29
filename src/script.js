@@ -23,7 +23,7 @@ let month = months[date.getMonth()];
 
 let hours = date.getHours();
 if (hours < 10) {
-  hours = `0${hour}`;
+  hours = `0${hours}`;
 }
 let minutes = date.getMinutes();
 if (minutes < 10) {
